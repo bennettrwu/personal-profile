@@ -1,0 +1,28 @@
+.split-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.split-container * {
+  flex: 1;
+}
+
+#icon-links {
+  margin-top: 1rem;
+}
+
+.icon-link {
+  text-decoration: none;
+  display: inline-block;
+  margin: 0.5rem;
+}
+
+.icon-link svg {
+  color: white;
+}
+
+@media (max-width: 850px) {
+  .split-container {
+    flex-direction: column;
+  }
+}
