@@ -46,9 +46,21 @@ export type WorkExperienceContent = {
   skills: Array<SkillTagConfig>;
 };
 
+export type ProjectContent = {
+  start_date: ConfigurableContentElement;
+  end_date: ConfigurableContentElement;
+  title: ConfigurableContentElement;
+  demo_link?: string;
+  demo_label?: ConfigurableContentElement;
+  source_link: string;
+  points: Array<ConfigurableContentElement>;
+  skills: Array<SkillTagConfig>;
+};
+
 export type ConfigurableContent = {
   profile: ProfileContent;
   education: EducationContent[];
   skills: SkillGroup[];
   work_experience: WorkExperienceContent[];
+  projects: ProjectContent[];
 };

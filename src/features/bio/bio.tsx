@@ -26,7 +26,7 @@ export default function Bio() {
           </div>
 
           <a id='bio-resume-link' href={Content.profile.resume_link} title='Link to my PDF resume' target='_blank'>
-            View Resume
+            Resume
             <ArrowTopRightOnSquareIcon className='right-icon' />
           </a>
         </FrostedCard>

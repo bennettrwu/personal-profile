@@ -4,14 +4,25 @@
   display: inline-flex;
   align-items: center;
   width: fit-content;
-  padding: 0 1rem;
+  padding: 0 0.5rem;
   min-height: 2rem;
-  border-radius: 1.5rem;
+  border-radius: 1rem;
   margin: 0.25rem;
   background-color: rgba($primary-100, 0.1);
 }
 
 .skill-tag-icon {
-  font-size: 1.5rem;
+  font-size: 1rem;
   margin-right: 0.5rem;
+}
+
+@media (max-width: 500px) {
+  .skill-tag-container {
+    min-height: 1.5rem;
+    font-size: 0.75rem;
+  }
+
+  .skill-tag-icon {
+    font-size: 1rem;
+  }
 }

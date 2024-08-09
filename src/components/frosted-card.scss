@@ -9,3 +9,10 @@
   margin: 1rem;
   border-radius: 0.5rem;
 }
+
+@media (max-width: 500px) {
+  .frosted-card {
+    padding: 0.5rem 1rem;
+    margin: 1rem 0.5rem;
+  }
+}

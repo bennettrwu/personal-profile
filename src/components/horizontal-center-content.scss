@@ -7,3 +7,10 @@
   max-width: 1400px;
   width: 80%;
 }
+
+@media (max-width: 800px) {
+  .horizontal-center-content-container {
+    width: 100%;
+    margin: 0.25rem;
+  }
+}

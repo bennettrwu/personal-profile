@@ -8,9 +8,12 @@ export default function Footer() {
     <footer id='footer'>
       <FrostedCard>
         <p id='footer-text'>
-          Copyright © 2024 | Bennett Ruichu Wu | <ScrollLink id='privacy-poliy-link' to={'/privacy'}>
-            Privacy Policy
-          </ScrollLink>
+          <span>Copyright © 2024</span> | <span>Bennett Ruichu Wu</span> |{' '}
+          <span>
+            <ScrollLink id='privacy-poliy-link' to={'/privacy'}>
+              Privacy Policy
+            </ScrollLink>
+          </span>
         </p>
       </FrostedCard>
     </footer>

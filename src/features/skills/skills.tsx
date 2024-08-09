@@ -9,6 +9,7 @@ export default function Skills() {
       <FrostedCard>
         {Content.skills.map((group, i) => (
           <div key={i}>
+            {i !== 0 && <hr />}
             <h3>{group.title}</h3>
             {group.skills.map((skill, j) => (
               <SkillTag key={j} {...skill} />

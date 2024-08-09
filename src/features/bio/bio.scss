@@ -9,12 +9,14 @@
 
 .bio-icon-links {
   margin-right: 2rem;
+  font-size: 2rem;
+  text-decoration: none;
 
   @include neutral-text-button;
 }
 
 #bio-resume-link {
-  margin-top: 1rem;
+  margin: 1rem 0rem;
 
   @include primary-button;
 }

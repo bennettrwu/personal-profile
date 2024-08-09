@@ -9,7 +9,7 @@ export default function Privacy() {
       <HomeButton />
       <h1 id='privacy-policy'>Privacy Policy</h1>
       <FrostedCard>
-        <p>Last Updated: August 8, 2024</p>
+        <p>Last Updated: August 9, 2024</p>
 
         <p>
           Your privacy is important to me. I have provided this privacy policy to help you understand how your personal
@@ -72,6 +72,10 @@ export default function Privacy() {
           I may update this privacy policy from time to time. Any changes will be posted on this page with an updated
           revision date.
         </p>
+
+        <strong>
+          This privacy policy applies solely to the website at the domain <i>bwu.dev</i> (subdomains not included).
+        </strong>
       </FrostedCard>
       <Footer />
     </HorizontalCenterContent>
