@@ -2,7 +2,7 @@ export type ConfigurableContentElement = string | React.JSX.Element;
 
 export type ProfileLinkContent = {
   icon: ConfigurableContentElement;
-  title: string;
+  aria: string;
   target: string;
   href: string;
 };

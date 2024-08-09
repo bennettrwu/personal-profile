@@ -13,14 +13,14 @@ const profile: ProfileContent = {
     // Github
     {
       icon: <i className='devicon-github-original'></i>,
-      title: 'Link to my Github profile',
+      aria: 'Link to my Github profile',
       target: '_blank',
       href: 'https://github.com/bennettrwu',
     },
     // LinkedIn
     {
       icon: <i className='devicon-linkedin-plain'></i>,
-      title: 'Link to my LinkedIn profile',
+      aria: 'Link to my LinkedIn profile',
       target: '_blank',
       href: 'https://linkedin.com/in/bennett-wu',
     },
