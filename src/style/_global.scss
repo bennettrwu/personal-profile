@@ -1,0 +1,29 @@
+@import './colors.module';
+
+.left-icon {
+  height: 1rem;
+  min-width: 1rem;
+  margin-right: 0.5rem;
+}
+
+.right-icon {
+  height: 1rem;
+  min-width: 1rem;
+  margin-left: 0.5rem;
+  padding: 0;
+}
+
+/* For nicer line breaks */
+h1 span,
+h2 span,
+h3 span,
+h4 span,
+h5 span,
+h6 span,
+p span {
+  display: inline-block;
+}
+
+hr {
+  color: $neutral-700;
+}

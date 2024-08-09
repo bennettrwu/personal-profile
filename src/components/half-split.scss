@@ -1,0 +1,14 @@
+.half-split-container {
+  display: flex;
+  flex-direction: row;
+  
+  * {
+    flex: 1;
+  }
+}
+
+@media (max-width: 800px) {
+  .half-split-container {
+    flex-direction: column;
+  }
+}

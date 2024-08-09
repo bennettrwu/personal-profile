@@ -1,11 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import App from './App.tsx';
+import AppProvider from './app/app-provider.tsx';
 
-import './main.css';
+import 'normalize.css';
+import './main.scss';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <App />
+    <AppProvider />
   </React.StrictMode>,
 );

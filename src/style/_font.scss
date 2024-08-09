@@ -1,0 +1,34 @@
+@import './colors.module';
+
+:root {
+  font-family: Inter, sans-serif;
+  font-feature-settings: 'liga' 1, 'calt' 1; // fix for Chrome
+  color: $neutral-400;
+}
+
+@supports (font-variation-settings: normal) {
+  :root {
+    font-family: InterVariable, sans-serif;
+  }
+}
+
+h1,
+h2, 
+h3,
+h4,
+h5,
+h6 {
+  color: $neutral-100;
+}
+
+strong {
+  color: $neutral-200;
+}
+
+a {
+  color: $neutral-400;
+
+  &:hover {
+    color: $primary-200;
+  }
+}

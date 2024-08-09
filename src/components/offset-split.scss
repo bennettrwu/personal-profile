@@ -1,0 +1,19 @@
+.offset-split-container {
+  display: flex;
+  flex-direction: row;
+  
+  * {
+    flex: 1;
+  }
+
+  >:nth-child(1) {
+    max-width: 250px;
+  }
+}
+
+@media (max-width: 800px) {
+  .offset-split-container {
+    flex-direction: column;
+flex-grow: 0;
+  }
+}

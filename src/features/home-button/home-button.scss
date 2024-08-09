@@ -1,0 +1,8 @@
+@import '../../style/buttons.module';
+
+#home-button {
+  margin-top: 2rem;
+  text-decoration: none;
+
+  @include neutral-text-button;
+}

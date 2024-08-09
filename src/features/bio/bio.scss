@@ -1,0 +1,20 @@
+@import '../../style/colors.module';
+@import '../../style/buttons.module';
+
+#bio-icon-links-container {
+  display: flex;
+  width: fit-content;
+  margin-top: 1rem;
+}
+
+.bio-icon-links {
+  margin-right: 2rem;
+
+  @include neutral-text-button;
+}
+
+#bio-resume-link {
+  margin-top: 1rem;
+
+  @include primary-button;
+}
