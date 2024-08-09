@@ -39,7 +39,7 @@ const projects: ProjectContent[] = [
     end_date: 'Aug 2023',
     title: 'NER Extension',
     source_link: 'https://github.com/bennettrwu/NER-Extension',
-    demo_link: '/ner_demo.webm',
+    demo_link: '/ner_demo.mp4',
     points: [
       <>
         Implements the Named Entity Recognition (NER) model described in:{' '}

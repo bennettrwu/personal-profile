@@ -3,6 +3,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Background from '../features/background/background';
 import Profile from './routes/profile';
 import Privacy from './routes/privacy';
+import NotFound from './routes/notfound';
 
 const router = createBrowserRouter([
   {
@@ -12,6 +13,10 @@ const router = createBrowserRouter([
   {
     path: '/privacy',
     element: <Privacy />,
+  },
+  {
+    path: '*',
+    element: <NotFound />,
   },
 ]);
 
