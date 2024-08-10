@@ -21,7 +21,7 @@ const projects: ProjectContent[] = [
     start_date: 'Aug 2023',
     end_date: 'Dec 2023',
     title: 'Focus Stacking',
-    demo_link: '/focus_stack_demo.gif',
+    demo_link: 'https://www.youtube.com/playlist?list=PLzI2HALtu4JJXak1UzjpRWR-HawyVVQLw',
     demo_label: 'Example Result (Entomophobia Warning)',
     source_link: 'https://github.com/bennettrwu/Focus-Stacking',
     points: [
@@ -39,7 +39,7 @@ const projects: ProjectContent[] = [
     end_date: 'Aug 2023',
     title: 'NER Extension',
     source_link: 'https://github.com/bennettrwu/NER-Extension',
-    demo_link: '/ner_demo.mp4',
+    demo_link: 'https://youtu.be/cR2qvGNRs_A',
     points: [
       <>
         Implements the Named Entity Recognition (NER) model described in:{' '}
