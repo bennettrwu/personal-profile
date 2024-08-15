@@ -10,7 +10,7 @@ const work_experience: WorkExperienceContent[] = [
     company: 'Expedia Group',
     job_title: 'Software Development Engineer Intern',
     points: [
-      'Eliminated 184 duplicate licenses by migrating Salesforce integration to merged instance to help',
+      'Eliminated 184 duplicate licenses by migrating Salesforce integration to merged instance',
       'Advanced new feature development by developing Kafka consumer to process ad campaign events in a Kotlin SpringBoot application',
       'Owned projects throughout CI/CD pipeline and ultimately deployed to production',
       'Developed communication skills while coordinating with others to understand and validate project specifications',
