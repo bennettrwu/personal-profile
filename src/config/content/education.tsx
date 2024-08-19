@@ -6,13 +6,7 @@ const education: EducationContent[] = [
     start_date: 'Aug 2022',
     end_date: 'May 2026',
     school: 'University of Illinois Urbana Champaign',
-    degree: (
-      <>
-        Bachelor of Science in Computer Science (Expected May 2025)
-        <br />
-        Professional Master of Computer Science (Expected May 2026)
-      </>
-    ),
+    degree: 'Combined BS-MCS in Computer Science',
     gpa: '3.98/4.00',
     points: [
       <>
