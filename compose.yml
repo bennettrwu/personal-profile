@@ -1,0 +1,7 @@
+version: '3'
+
+services:
+  personal-profile:
+    image: bwu1324/personal-profile-site:latest
+    ports:
+      - "8005:80"
