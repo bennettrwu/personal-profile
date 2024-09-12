@@ -22,7 +22,7 @@ const projects: ProjectContent[] = [
     end_date: 'Dec 2023',
     title: 'Focus Stacking',
     demo_link: 'https://www.youtube.com/playlist?list=PLzI2HALtu4JJXak1UzjpRWR-HawyVVQLw',
-    demo_label: 'Example Result (Entomophobia Warning)',
+    demo_label: 'Example Result (Warning: Bug)',
     source_link: 'https://github.com/bennettrwu/Focus-Stacking',
     points: [
       <>
@@ -42,12 +42,13 @@ const projects: ProjectContent[] = [
     demo_link: 'https://youtu.be/cR2qvGNRs_A',
     points: [
       <>
-        Implements the Named Entity Recognition (NER) model described in:{' '}
-        <i>Template-Based Named Entity Recognition Using BART (Cui, Leyang et al., 2021)</i>
+        Built and trained transformer machine learning model detailed in{' '}
+        <i>Template-Based Named Entity Recognition Using BART (Cui, Leyang et al., 2021)</i> to perform named entity
+        recognition (e.g. people, locations)
       </>,
-      'Trained BART model to identify named entities (e.g. proper nouns) then developed API and Google Chrome browser extension to highlight named entities on webpages.',
+      'Implemented Chrome browser extension to allow user to interact with language model to highlight named entities on websites',
     ],
-    skills: [SkillList.PYTHON, SkillList.PYTORCH, SkillList.JAVASCRIPT],
+    skills: [SkillList.PYTORCH, SkillList.PYTHON, SkillList.TYPESCRIPT],
   },
   {
     start_date: 'Apr 2022',

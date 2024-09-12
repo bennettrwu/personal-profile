@@ -13,7 +13,7 @@ const work_experience: WorkExperienceContent[] = [
       'Eliminated 184 duplicate licenses by migrating Salesforce integration to merged instance',
       'Advanced new feature development by developing Kafka consumer to process ad campaign events in a Kotlin SpringBoot application',
       'Owned projects throughout CI/CD pipeline and ultimately deployed to production',
-      'Developed communication skills while coordinating with others to understand and validate project specifications',
+      'Developed communication skills while working with others to understand and validate project requirements',
     ],
     skills: [
       SkillList.KAFKA,
