@@ -1,12 +1,12 @@
-import { ConfigurableContent } from '../../types/configurable-content';
+import {ConfigurableContent} from '../../types/configurable-content';
 
 import profile from './profile';
 import education from './education';
 import skills from './skills';
-import work_experience from './work_experience';
+import work_experience from './work-experience';
 import projects from './projects';
 
-const Content: ConfigurableContent = {
+const content: ConfigurableContent = {
   profile,
   education,
   skills,
@@ -14,4 +14,4 @@ const Content: ConfigurableContent = {
   projects,
 };
 
-export default Content;
+export default content;

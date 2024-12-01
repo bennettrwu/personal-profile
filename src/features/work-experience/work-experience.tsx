@@ -15,15 +15,15 @@ export default function WorkExperience() {
             {i !== 0 && <hr />}
             <OffsetSplit>
               <div>
-                <p className='work-experience-date'>
+                <p className="work-experience-date">
                   <span>{experience.start_date}</span> — <span>{experience.end_date}</span>
                   <br />
                   <span>{experience.location}</span>
                 </p>
               </div>
               <div>
-                <h3 className='work-experience-company'>{experience.company}</h3>
-                <p className='work-experience-title'>{experience.job_title}</p>
+                <h3 className="work-experience-company">{experience.company}</h3>
+                <p className="work-experience-title">{experience.job_title}</p>
                 <ul>
                   {experience.points.map((point, j) => (
                     <li key={j}>{point}</li>

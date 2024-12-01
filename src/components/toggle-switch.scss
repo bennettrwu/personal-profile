@@ -1,5 +1,5 @@
-@import '../style/colors.module';
-@import '../style/common.module';
+@use '../style/colors.module' as colors;
+@use '../style/common.module' as common;
 
 .toggle-switch-container {
   margin: 0.5rem;
@@ -7,21 +7,21 @@
   height: 1.5rem;
   border: solid 0.1rem;
   border-radius: 0.85rem;
-  background-color: $neutral-500;
-  border-color: $neutral-500;
+  background-color: colors.$neutral-500;
+  border-color: colors.$neutral-500;
   display: flex;
   align-items: center;
 
-  @include transition(transform 300ms linear, background-color 300ms linear);
+  @include common.transition(transform 300ms linear, background-color 300ms linear);
 }
 
 .toggle-switch-container-on {
-  background-color: $accent-500;
-  border-color: $accent-500;
+  background-color: colors.$accent-500;
+  border-color: colors.$accent-500;
 }
 
 .toggle-switch-ball {
-  background-color: $neutral-100;
+  background-color: colors.$neutral-100;
   height: 1.5rem;
   width: 1.5rem;
   border-radius: 0.75rem;

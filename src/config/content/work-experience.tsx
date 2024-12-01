@@ -1,7 +1,7 @@
-import { WorkExperienceContent } from '../../types/configurable-content';
-import SkillList from './skill_tag_config';
+import {WorkExperienceContent} from '../../types/configurable-content';
+import SkillList from './skill-tag-config';
 
-const work_experience: WorkExperienceContent[] = [
+const workExperience: WorkExperienceContent[] = [
   // Expedia Group
   {
     start_date: 'May 2024',
@@ -61,4 +61,4 @@ const work_experience: WorkExperienceContent[] = [
   },
 ];
 
-export default work_experience;
+export default workExperience;

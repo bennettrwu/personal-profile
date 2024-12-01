@@ -1,4 +1,4 @@
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import {createBrowserRouter, RouterProvider} from 'react-router-dom';
 
 import Background from '../features/background/background';
 import Profile from './routes/profile';

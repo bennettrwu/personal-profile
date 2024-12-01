@@ -1,11 +1,15 @@
-@import './colors.module';
+@use './colors.module' as colors;
 
 :root {
-  font-family: "Montserrat", sans-serif;
+  font-family: Inter, sans-serif;
+  font-feature-settings: 'liga' 1, 'calt' 1; /* fix for Chrome */
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
-  color: $neutral-300;
+  color: colors.$neutral-300;
+}
+@supports (font-variation-settings: normal) {
+  :root { font-family: InterVariable, sans-serif; }
 }
 
 h1,
@@ -14,7 +18,7 @@ h3,
 h4,
 h5,
 h6 {
-  color: $neutral-100;
+  color: colors.$neutral-100;
 }
 
 /* For nicer line breaks */
@@ -29,13 +33,13 @@ p span {
 }
 
 strong {
-  color: $neutral-200;
+  color: colors.$neutral-200;
 }
 
 a {
-  color: $neutral-400;
+  color: colors.$neutral-400;
 
   &:hover {
-    color: $primary-200;
+    color: colors.$primary-200;
   }
 }

@@ -5,12 +5,12 @@ import './footer.scss';
 
 export default function Footer() {
   return (
-    <footer id='footer'>
+    <footer id="footer">
       <FrostedCard>
-        <p id='footer-text'>
+        <p id="footer-text">
           <span>Copyright © 2024</span> | <span>Bennett Ruichu Wu</span> |{' '}
           <span>
-            <ScrollLink id='privacy-poliy-link' to={'/privacy'}>
+            <ScrollLink id="privacy-poliy-link" to={'/privacy'}>
               Privacy Policy
             </ScrollLink>
           </span>

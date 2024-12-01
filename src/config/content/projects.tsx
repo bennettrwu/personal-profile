@@ -1,5 +1,5 @@
-import { ProjectContent } from '../../types/configurable-content';
-import SkillList from './skill_tag_config';
+import {ProjectContent} from '../../types/configurable-content';
+import SkillList from './skill-tag-config';
 
 const projects: ProjectContent[] = [
   {

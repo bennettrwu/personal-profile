@@ -7,12 +7,22 @@
   <title>Bennett R. Wu Profile</title>
 
   <!-- Font -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link 
+    rel="preload"
+    href="https://rsms.me/inter/inter.css&display=swap"
+    as="style"
+    onload="this.onload=null;
+    this.rel='stylesheet'" 
+  />
 
   <!-- Skill Icons -->
-  <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+  <link 
+    rel="preload"
+    href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"
+    as="style"
+    onload="this.onload=null;
+    this.rel='stylesheet'"
+  />
 
   <!-- Favicon Setup -->
   <!-- Generated using https://realfavicongenerator.net -->
@@ -31,7 +41,10 @@
 </head>
 
 <body>
-
+  <noscript>
+    It is necessary to enable JavaScript to view this site.
+    For instructions on how to do this, click here: <a href="https://www.enable-javascript.com/">https://www.enable-javascript.com/</a>
+  </noscript>
   <div id="root"></div>
   <script type="module" src="/src/main.tsx"></script>
 </body>

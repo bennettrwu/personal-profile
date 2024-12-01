@@ -1,4 +1,4 @@
-@import './colors.module';
+@use './colors.module' as colors;
 
 .left-icon {
   height: 1rem;
@@ -14,7 +14,7 @@
 }
 
 hr {
-  color: $neutral-700;
+  color: colors.$neutral-700;
 }
 
 li {

@@ -1,5 +1,5 @@
-import { SkillGroup } from '../../types/configurable-content';
-import SkillList from './skill_tag_config';
+import {SkillGroup} from '../../types/configurable-content';
+import SkillList from './skill-tag-config';
 
 const skills: SkillGroup[] = [
   {

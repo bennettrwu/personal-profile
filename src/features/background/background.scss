@@ -1,7 +1,7 @@
-@import '../../style/colors.module';
+@use '../../style/colors.module' as colors;
 
 body {
-  background-color: $primary-900;
+  background-color: colors.$primary-900;
 }
 
 #background-container {
@@ -9,7 +9,7 @@ body {
 }
 
 #background-gradient {
-  background-image: linear-gradient($primary-500, $primary-900);
+  background-image: linear-gradient(colors.$primary-500, colors.$primary-900);
   position: fixed;
   top: 0;
   left: 0;

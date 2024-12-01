@@ -1,5 +1,5 @@
-@import './colors.module';
-@import './common.module';
+@use './colors.module' as colors;
+@use './common.module' as common;
 
 @mixin icon-align {
   display: inline-flex;
@@ -9,36 +9,36 @@
 }
 
 @mixin primary-text-button {
-  color: $primary-300;
+  color: colors.$primary-300;
   opacity: 0.75;
-  @include transition(color 300ms linear, opacity 300ms linear);
+  @include common.transition(color 300ms linear, opacity 300ms linear);
   @include icon-align;
 
   &:hover {
-    color: $primary-200;
+    color: colors.$primary-200;
   }
 }
 
 @mixin accent-text-button {
-  color: $accent-400;
+  color: colors.$accent-400;
   opacity: 0.75;
-  @include transition(color 300ms linear, opacity 300ms linear);
+  @include common.transition(color 300ms linear, opacity 300ms linear);
   @include icon-align;
 
   &:hover {
-    color: $accent-200;
+    color: colors.$accent-200;
   }
 }
 
 
 @mixin neutral-text-button {
-  color: $neutral-200;
+  color: colors.$neutral-200;
   opacity: 0.75;
-  @include transition(color 300ms linear, opacity 300ms linear);
+  @include common.transition(color 300ms linear, opacity 300ms linear);
   @include icon-align;
 
   &:hover {
-    color: $neutral-100;
+    color: colors.$neutral-100;
     opacity: 1;
   }
 }
@@ -50,13 +50,13 @@
   border-radius: 1.5rem;
 
   text-decoration: none;
-  color: $neutral-100;
-  background-color: rgba($primary-100, 0.25);
+  color: colors.$neutral-100;
+  background-color: rgba(colors.$primary-100, 0.25);
 
-  @include transition(background-color 300ms);
+  @include common.transition(background-color 300ms);
   @include icon-align;
 
   &:hover {
-    background-color: rgba($primary-100, 0.5);
+    background-color: rgba(colors.$primary-100, 0.5);
   }
 }

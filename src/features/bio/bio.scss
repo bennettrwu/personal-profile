@@ -1,5 +1,5 @@
-@import '../../style/colors.module';
-@import '../../style/buttons.module';
+@use '../../style/colors.module' as colors;
+@use '../../style/buttons.module' as buttons;
 
 #bio-icon-links-container {
   display: flex;
@@ -12,11 +12,11 @@
   font-size: 2rem;
   text-decoration: none;
 
-  @include neutral-text-button;
+  @include buttons.neutral-text-button;
 }
 
 #bio-resume-link {
   margin: 1rem 0rem;
 
-  @include primary-button;
+  @include buttons.primary-button;
 }

@@ -1,5 +1,5 @@
-import { RecursivePartial } from '@tsparticles/engine';
-import { IOptions } from '@tsparticles/engine';
+import {RecursivePartial} from '@tsparticles/engine';
+import {IOptions} from '@tsparticles/engine';
 
 import colors from '../../style/_colors.module.scss';
 
@@ -11,14 +11,14 @@ export default function genParticleConfig(
   width: number,
   height: number,
   motion: boolean,
-  prev_config?: RecursivePartial<IOptions> | undefined,
+  prevConfig?: RecursivePartial<IOptions> | undefined,
 ): RecursivePartial<IOptions> | undefined {
   const area = width * height;
   const particles = Math.min(PARTICLE_LIMIT, Math.round(area / PIXELS_PER_PARTICLE_TARGET));
 
   // Don't refresh background unless change is significant
-  if (prev_config && prev_config.particles && prev_config.particles.number && prev_config.particles.number.value) {
-    if (Math.abs(particles - prev_config.particles?.number?.value) < PARTICLE_REFRESH_THRESHOLD) return;
+  if (prevConfig && prevConfig.particles && prevConfig.particles.number && prevConfig.particles.number.value) {
+    if (Math.abs(particles - prevConfig.particles?.number?.value) < PARTICLE_REFRESH_THRESHOLD) return;
   }
 
   return {

@@ -1,4 +1,4 @@
-import { EducationContent } from '../../types/configurable-content';
+import {EducationContent} from '../../types/configurable-content';
 
 const education: EducationContent[] = [
   // UIUC
@@ -10,8 +10,8 @@ const education: EducationContent[] = [
     gpa: '3.98/4.00',
     points: [
       <>
-        <strong>Coursework:</strong> Algorithms, Artificial Intelligence, Computational Photography, Computer Architecture,
-        Database Systems, Data Structures, Distributed Systems, Parallel Programming
+        <strong>Coursework:</strong> Algorithms, Artificial Intelligence, Computational Photography, Computer
+        Architecture, Database Systems, Data Structures, Distributed Systems, Parallel Programming
       </>,
       <>
         <strong>In Progress:</strong> Cryptography, Programming Languages and Compilers

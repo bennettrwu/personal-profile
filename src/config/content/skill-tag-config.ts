@@ -1,4 +1,4 @@
-import { SkillTagConfig } from '../../types/configurable-content';
+import {SkillTagConfig} from '../../types/configurable-content';
 
 // Languages
 const C_CPP: SkillTagConfig = {
@@ -128,7 +128,7 @@ const LINUX: SkillTagConfig = {
   skillName: 'GNU/Linux',
 };
 
-const SkillList = {
+const skillList = {
   C_CPP,
   PYTHON,
   JAVASCRIPT,
@@ -161,4 +161,4 @@ const SkillList = {
   LINUX,
 };
 
-export default SkillList;
+export default skillList;

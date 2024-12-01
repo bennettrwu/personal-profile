@@ -1,4 +1,4 @@
-@import '../../style/buttons.module';
+@use '../../style/buttons.module' as buttons;
 
 .project-date,
 .project-title {
@@ -15,6 +15,6 @@
   margin-right: 1rem;
 
   a {
-    @include neutral-text-button;
+    @include buttons.neutral-text-button;
   }
 }

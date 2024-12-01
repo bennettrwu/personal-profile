@@ -1,6 +1,6 @@
 import './toggle-switch.scss';
 
-function ToggleSwitch(props: { isOn: boolean; onSwitch?: (isOn: boolean) => void }) {
+function ToggleSwitch(props: {isOn: boolean; onSwitch?: (isOn: boolean) => void}) {
   return (
     <div
       className={props.isOn ? 'toggle-switch-container toggle-switch-container-on' : 'toggle-switch-container'}
