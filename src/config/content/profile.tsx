@@ -28,16 +28,21 @@ const profile: ProfileContent = {
   resume_link: '/Bennett-Wu_resume-redacted.pdf',
   bio: (
     <>
-      During high school, I entered a hack-a-thon with little to no programming experience — and failed miserably.
-      However, that experience ignited a passion for coding that has only grown since.
+      Hi, I'm Bennett, a computer science student with a passion for creating software that makes a positive impact.
       <br />
       <br />
-      Computing has revolutionized our world — and will continue to do so. I'm dedicated to using software to make a
-      positive difference in the world, whether it be in a website, mobile app, embedded devices, infrastructure, or
-      something new.
+      I've had the opportunity to work on diverse projects, from developing automations that help scientists analyze
+      experiments faster, to migrating APIs in production web applications. I've also created machine learning-powered
+      tools to transcribe classroom audio to improve accessibility. I'm constantly working to improve my skills and
+      dedicated to writing software that can drive meaningful change.
       <br />
       <br />
-      When I'm not programming, I enjoy 3D printing, photography, and playing piano.
+      Growing up, I watched hours of videos on computer building and new technological innovations. I was inspired by
+      the power of computing and software, I pursed an education in computer science. Currently, I'm enrolled in a
+      combined BS-MCS program at the University of Illinois, with plans to graduate in Spring 2026.
+      <br />
+      <br />
+      Outside of programming, I enjoy 3D printing, photography, and playing piano.
     </>
   ),
 };
