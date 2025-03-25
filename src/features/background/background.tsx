@@ -12,12 +12,17 @@ import './background.scss';
 
 export default function Background({children}: React.PropsWithChildren) {
   const [particleConfig, setParticleConfig] = useState<RecursivePartial<IOptions | undefined>>();
+  const [fadeInStyle, setFadeInStyle] = useState<boolean>(false);
 
   // default to true if undefined
   const [motionEnabled, privateSetMotionEnabled] = useState(window.localStorage.getItem('motionEnabled') !== 'false');
   const [particlesEnabled, privateSetParticlesEnabled] = useState(
     window.localStorage.getItem('particlesEnabled') !== 'false',
   );
+
+  useEffect(() => {
+    setFadeInStyle(particlesEnabled);
+  }, [particlesEnabled]);
 
   // Override state update functions to also save to local storage
   const setMotionEnabled = (enabled: boolean) => {
@@ -49,7 +54,11 @@ export default function Background({children}: React.PropsWithChildren) {
     <>
       <div id="background-gradient"></div>
 
-      {particlesEnabled && <Particles id="tsparticles" options={particleConfig} />}
+      {particlesEnabled && (
+        <div className={fadeInStyle ? 'animate-fade-in-3s' : ''}>
+          <Particles id="tsparticles" options={particleConfig} />
+        </div>
+      )}
 
       <div id="background-particle-config-container">
         <p>Motion:</p>
