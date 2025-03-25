@@ -22,7 +22,7 @@ const profile: ProfileContent = {
       icon: <i className="devicon-linkedin-plain"></i>,
       aria: 'Link to my LinkedIn profile',
       target: '_blank',
-      href: 'https://linkedin.com/in/bennett-wu',
+      href: 'https://linkedin.com/in/bennettrwu',
     },
   ],
   resume_link: '/Bennett-Wu_resume-redacted.pdf',

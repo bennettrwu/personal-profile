@@ -8,7 +8,7 @@ const projects: ProjectContent[] = [
     title: 'Grocery Aid',
     demo_link: 'https://groceryaid.bennettrwu.com',
     demo_label: 'Live Demo',
-    source_link: 'https://github.com/bennettrwu/Grocery-Aid',
+    source_link: 'https://github.com/bennettrwu/grocery-aid',
     points: [
       'A web app for exploring and comparing prices of grocery items between stores',
       'Users create an account, then can search for items from multiple stores by keyword, or for multiple items with a budget limit',
@@ -21,9 +21,9 @@ const projects: ProjectContent[] = [
     start_date: 'Aug 2023',
     end_date: 'Dec 2023',
     title: 'Focus Stacking',
-    demo_link: 'https://www.youtube.com/playlist?list=PLzI2HALtu4JJXak1UzjpRWR-HawyVVQLw',
+    demo_link: 'https://www.youtube.com/playlist?list=PL5tZqkyvUAxMxNQaaoXuQU-cmZYY38q4M',
     demo_label: 'Example Result (Warning: Bug)',
-    source_link: 'https://github.com/bennettrwu/Focus-Stacking',
+    source_link: 'https://github.com/bennettrwu/focus-stacking',
     points: [
       <>
         Implements focus stacking algorithm found in:{' '}
@@ -38,8 +38,8 @@ const projects: ProjectContent[] = [
     start_date: 'Aug 2023',
     end_date: 'Aug 2023',
     title: 'NER Extension',
-    source_link: 'https://github.com/bennettrwu/NER-Extension',
-    demo_link: 'https://youtu.be/cR2qvGNRs_A',
+    source_link: 'https://github.com/bennettrwu/ner-extension',
+    demo_link: 'https://www.youtube.com/watch?v=Gim27R5bt1w',
     points: [
       <>
         Built and trained transformer machine learning model detailed in{' '}
