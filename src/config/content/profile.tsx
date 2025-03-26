@@ -40,9 +40,6 @@ const profile: ProfileContent = {
       Growing up, I watched hours of videos on computer building and new technological innovations. I was inspired by
       the power of computing and software, I pursed an education in computer science. Currently, I'm enrolled in the
       combined BS-MCS program at the University of Illinois, with plans to graduate in Spring 2026.
-      <br />
-      <br />
-      Outside of programming, I enjoy 3D printing, photography, and playing piano.
     </>
   ),
 };
