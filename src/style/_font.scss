@@ -2,14 +2,18 @@
 
 :root {
   font-family: Inter, sans-serif;
-  font-feature-settings: 'liga' 1, 'calt' 1; /* fix for Chrome */
+  font-feature-settings:
+    'liga' 1,
+    'calt' 1; /* fix for Chrome */
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
   color: colors.$neutral-300;
 }
 @supports (font-variation-settings: normal) {
-  :root { font-family: InterVariable, sans-serif; }
+  :root {
+    font-family: InterVariable, sans-serif;
+  }
 }
 
 h1,

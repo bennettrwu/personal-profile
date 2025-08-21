@@ -1,4 +1,4 @@
-import {ConfigurableContent} from '../../types/configurable-content';
+import { ConfigurableContent } from '../../types/configurable-content';
 
 import profile from './profile';
 import education from './education';

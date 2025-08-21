@@ -9,7 +9,11 @@ body {
 }
 
 #background-gradient {
-  background-image: linear-gradient(to bottom left, colors.$primary-500, colors.$primary-900);
+  background-image: linear-gradient(
+    to bottom left,
+    colors.$primary-500,
+    colors.$primary-900
+  );
   position: fixed;
   top: 0;
   left: 0;

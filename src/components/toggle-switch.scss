@@ -12,7 +12,10 @@
   display: flex;
   align-items: center;
 
-  @include common.transition(transform 300ms linear, background-color 300ms linear);
+  @include common.transition(
+    transform 300ms linear,
+    background-color 300ms linear
+  );
 }
 
 .toggle-switch-container-on {

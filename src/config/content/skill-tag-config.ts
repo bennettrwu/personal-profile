@@ -1,4 +1,4 @@
-import {SkillTagConfig} from '../../types/configurable-content';
+import { SkillTagConfig } from '../../types/configurable-content';
 
 // Languages
 const C_CPP: SkillTagConfig = {

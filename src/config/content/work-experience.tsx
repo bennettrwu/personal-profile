@@ -1,4 +1,4 @@
-import {WorkExperienceContent} from '../../types/configurable-content';
+import { WorkExperienceContent } from '../../types/configurable-content';
 import SkillList from './skill-tag-config';
 
 const workExperience: WorkExperienceContent[] = [
