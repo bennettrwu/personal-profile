@@ -6,42 +6,42 @@ A simple personal profile site for myself. Hosted at https://bwu.dev with Cloudf
 
 ## Built With
 
-* React.js
-* Vite
-* SASS
-* Typescript
+- React.js
+- Vite
+- SASS
+- Typescript
 
 ## Building
 
 ### Prerequisites
 
-* Node.js (Tested with Node 20)
+- Node.js (Tested with Node 20)
 
 ### Build
 
 1. Install dependencies
-    ```bash
-    npm install
-    ```
+   ```bash
+   npm install
+   ```
 2. Build app
-    ```bash
-    npm run build
-    ```
+   ```bash
+   npm run build
+   ```
 3. Build output is in `dist` folder
 
 ## Developing
 
 ### Prerequisites
 
-* Node.js (Tested with Node 20)
+- Node.js (Tested with Node 20)
 
 ### Starting the Application
 
 1. Install dependencies
-    ```bash
-    npm install
-    ```
+   ```bash
+   npm install
+   ```
 2. Start server
-    ```bash
-    npm run dev
-    ```
+   ```bash
+   npm run dev
+   ```

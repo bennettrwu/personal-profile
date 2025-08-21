@@ -30,7 +30,6 @@
   }
 }
 
-
 @mixin neutral-text-button {
   color: colors.$neutral-200;
   opacity: 0.75;
@@ -42,7 +41,6 @@
     opacity: 1;
   }
 }
-
 
 @mixin primary-button {
   min-height: 3rem;

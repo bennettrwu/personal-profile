@@ -1,9 +1,9 @@
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import FrostedCard from '../../components/frosted-card';
 import Content from '../../config/content/content';
 import HalfSplit from '../../components/half-split';
 
-import {ArrowTopRightOnSquareIcon} from '@heroicons/react/16/solid';
+import { ArrowTopRightOnSquareIcon } from '@heroicons/react/16/solid';
 
 import './bio.scss';
 
@@ -19,7 +19,16 @@ export default function Bio() {
 
           <div id="bio-icon-links-container">
             {Content.profile.links.map((link, i) => (
-              <Link key={i} className="bio-icon-links" to={link.href} aria-label={link.aria} target={link.target}>
+              <Link
+                /* eslint-disable-next-line @eslint-react/no-array-index-key --
+                 * Array is an immutable array, item index will not change
+                 */
+                key={i}
+                className="bio-icon-links"
+                to={link.href}
+                aria-label={link.aria}
+                target={link.target}
+              >
                 <span>{link.icon}</span>
               </Link>
             ))}

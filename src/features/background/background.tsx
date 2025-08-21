@@ -1,35 +1,35 @@
-import {useEffect, useState} from 'react';
-import {useDebouncedCallback} from 'use-debounce';
+import { useEffect, useState } from 'react';
+import { useDebouncedCallback } from 'use-debounce';
 
-import {Engine, IOptions, RecursivePartial} from '@tsparticles/engine';
-import Particles, {initParticlesEngine} from '@tsparticles/react';
-import {loadSlim} from '@tsparticles/slim';
+import { Engine, IOptions, RecursivePartial } from '@tsparticles/engine';
+import Particles, { initParticlesEngine } from '@tsparticles/react';
+import { loadSlim } from '@tsparticles/slim';
 
 import genParticleConfig from './getParticleConfig';
 import ToggleSwitch from '../../components/toggle-switch';
 
 import './background.scss';
 
-export default function Background({children}: React.PropsWithChildren) {
-  const [particleConfig, setParticleConfig] = useState<RecursivePartial<IOptions | undefined>>();
-  const [fadeInStyle, setFadeInStyle] = useState<boolean>(false);
+export default function Background({ children }: React.PropsWithChildren) {
+  const [particleConfig, setParticleConfig] =
+    useState<RecursivePartial<IOptions | undefined>>();
 
   // default to true if undefined
-  const [motionEnabled, privateSetMotionEnabled] = useState(window.localStorage.getItem('motionEnabled') !== 'false');
+  const [motionEnabled, privateSetMotionEnabled] = useState(
+    window.localStorage.getItem('motionEnabled') !== 'false',
+  );
   const [particlesEnabled, privateSetParticlesEnabled] = useState(
     window.localStorage.getItem('particlesEnabled') !== 'false',
   );
-
-  useEffect(() => {
-    setFadeInStyle(particlesEnabled);
-  }, [particlesEnabled]);
 
   // Override state update functions to also save to local storage
   const setMotionEnabled = (enabled: boolean) => {
     window.localStorage.setItem('motionEnabled', enabled.toString());
 
     // Particle config needs to be updated when disabling motion
-    setParticleConfig(genParticleConfig(window.innerWidth, window.innerHeight, enabled));
+    setParticleConfig(
+      genParticleConfig(window.innerWidth, window.innerHeight, enabled),
+    );
     privateSetMotionEnabled(enabled);
   };
   const setParticlesEnabled = (enabled: boolean) => {
@@ -39,15 +39,31 @@ export default function Background({children}: React.PropsWithChildren) {
 
   // Debounce particle configuration updates
   const updateParticleConfig = useDebouncedCallback(() => {
-    const newConfig = genParticleConfig(window.innerWidth, window.innerHeight, motionEnabled, particleConfig);
+    const newConfig = genParticleConfig(
+      window.innerWidth,
+      window.innerHeight,
+      motionEnabled,
+      particleConfig,
+    );
+    /* eslint-disable-next-line @eslint-react/hooks-extra/no-direct-set-state-in-use-effect --
+     * Use effect is only called when component first mounts and state needs to be updated based on external events
+     */
     if (newConfig) setParticleConfig(newConfig);
   }, 500);
   useEffect(() => {
     // Update particle config on each resize
     window.addEventListener('resize', updateParticleConfig);
 
-    initParticlesEngine(async (engine: Engine) => await loadSlim(engine)).catch(() => {});
+    initParticlesEngine(async (engine: Engine) => {
+      await loadSlim(engine);
+    }).catch((error: unknown) => {
+      console.error(error);
+    });
     updateParticleConfig();
+
+    return () => {
+      window.removeEventListener('resize', updateParticleConfig);
+    };
   }, [updateParticleConfig]);
 
   return (
@@ -55,7 +71,7 @@ export default function Background({children}: React.PropsWithChildren) {
       <div id="background-gradient"></div>
 
       {particlesEnabled && (
-        <div className={fadeInStyle ? 'animate-fade-in-3s' : ''}>
+        <div className="animate-fade-in-3s">
           <Particles id="tsparticles" options={particleConfig} />
         </div>
       )}

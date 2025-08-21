@@ -1,4 +1,4 @@
-import {SkillGroup} from '../../types/configurable-content';
+import { SkillGroup } from '../../types/configurable-content';
 import SkillList from './skill-tag-config';
 
 const skills: SkillGroup[] = [
@@ -30,7 +30,13 @@ const skills: SkillGroup[] = [
   },
   {
     title: 'Libraries',
-    skills: [SkillList.OPENCV, SkillList.NUMPY, SkillList.PYTORCH, SkillList.TENSORFLOW, SkillList.MATPLOTLIB],
+    skills: [
+      SkillList.OPENCV,
+      SkillList.NUMPY,
+      SkillList.PYTORCH,
+      SkillList.TENSORFLOW,
+      SkillList.MATPLOTLIB,
+    ],
   },
   {
     title: 'Technologies',

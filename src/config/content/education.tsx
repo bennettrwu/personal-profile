@@ -1,4 +1,5 @@
-import {EducationContent} from '../../types/configurable-content';
+import { Fragment } from 'react/jsx-runtime';
+import { EducationContent } from '../../types/configurable-content';
 
 const education: EducationContent[] = [
   // UIUC
@@ -9,11 +10,12 @@ const education: EducationContent[] = [
     degree: 'Combined BS-MCS in Computer Science',
     gpa: '3.95/4.00',
     points: [
-      <>
-        <strong>Coursework:</strong> Algorithms, Artificial Intelligence, Computational Photography, Computer
-        Architecture, Cloud Computing, Cryptography, Database Systems, Data Structures, Distributed Systems, Parallel
-        Programming
-      </>,
+      <Fragment key="coursework">
+        <strong>Coursework:</strong> Algorithms, Artificial Intelligence,
+        Computational Photography, Computer Architecture, Cloud Computing,
+        Cryptography, Database Systems, Data Structures, Distributed Systems,
+        Parallel Programming
+      </Fragment>,
     ],
   },
 ];

@@ -1,66 +1,66 @@
 export type ConfigurableContentElement = string | React.JSX.Element;
 
-export type ProfileLinkContent = {
-  icon: ConfigurableContentElement;
-  aria: string;
-  target: string;
-  href: string;
-};
+export interface ProfileLinkContent {
+  readonly icon: ConfigurableContentElement;
+  readonly aria: string;
+  readonly target: string;
+  readonly href: string;
+}
 
-export type ProfileContent = {
-  name: ConfigurableContentElement;
-  position: ConfigurableContentElement;
-  tagline: ConfigurableContentElement;
-  timezone: ConfigurableContentElement;
-  links: ProfileLinkContent[];
-  resume_link: string;
-  bio: ConfigurableContentElement;
-};
+export interface ProfileContent {
+  readonly name: ConfigurableContentElement;
+  readonly position: ConfigurableContentElement;
+  readonly tagline: ConfigurableContentElement;
+  readonly timezone: ConfigurableContentElement;
+  readonly links: readonly ProfileLinkContent[];
+  readonly resume_link: string;
+  readonly bio: ConfigurableContentElement;
+}
 
-export type EducationContent = {
-  start_date: ConfigurableContentElement;
-  end_date: ConfigurableContentElement;
-  gpa: ConfigurableContentElement;
-  school: ConfigurableContentElement;
-  degree: ConfigurableContentElement;
-  points: ConfigurableContentElement[];
-};
+export interface EducationContent {
+  readonly start_date: ConfigurableContentElement;
+  readonly end_date: ConfigurableContentElement;
+  readonly gpa: ConfigurableContentElement;
+  readonly school: ConfigurableContentElement;
+  readonly degree: ConfigurableContentElement;
+  readonly points: readonly ConfigurableContentElement[];
+}
 
-export type SkillTagConfig = {
-  iconClass: string;
-  skillName: string;
-};
+export interface SkillTagConfig {
+  readonly iconClass: string;
+  readonly skillName: string;
+}
 
-export type SkillGroup = {
-  title: ConfigurableContentElement;
-  skills: SkillTagConfig[];
-};
+export interface SkillGroup {
+  readonly title: ConfigurableContentElement;
+  readonly skills: readonly SkillTagConfig[];
+}
 
-export type WorkExperienceContent = {
-  start_date: ConfigurableContentElement;
-  end_date: ConfigurableContentElement;
-  location: ConfigurableContentElement;
-  company: ConfigurableContentElement;
-  job_title: ConfigurableContentElement;
-  points: Array<ConfigurableContentElement>;
-  skills: Array<SkillTagConfig>;
-};
+export interface WorkExperienceContent {
+  readonly start_date: ConfigurableContentElement;
+  readonly end_date: ConfigurableContentElement;
+  readonly location: ConfigurableContentElement;
+  readonly company: ConfigurableContentElement;
+  readonly job_title: ConfigurableContentElement;
+  readonly points: readonly ConfigurableContentElement[];
+  readonly skills: readonly SkillTagConfig[];
+}
 
-export type ProjectContent = {
-  start_date: ConfigurableContentElement;
-  end_date: ConfigurableContentElement;
-  title: ConfigurableContentElement;
-  demo_link?: string;
-  demo_label?: ConfigurableContentElement;
-  source_link: string;
-  points: Array<ConfigurableContentElement>;
-  skills: Array<SkillTagConfig>;
-};
+export interface ProjectContent {
+  readonly start_date: ConfigurableContentElement;
+  readonly end_date: ConfigurableContentElement;
+  readonly title: ConfigurableContentElement;
+  readonly demo_link?: string;
+  readonly demo_label?: ConfigurableContentElement;
+  readonly source_link: string;
+  readonly points: readonly ConfigurableContentElement[];
+  readonly skills: readonly SkillTagConfig[];
+}
 
-export type ConfigurableContent = {
-  profile: ProfileContent;
-  education: EducationContent[];
-  skills: SkillGroup[];
-  work_experience: WorkExperienceContent[];
-  projects: ProjectContent[];
-};
+export interface ConfigurableContent {
+  readonly profile: ProfileContent;
+  readonly education: readonly EducationContent[];
+  readonly skills: readonly SkillGroup[];
+  readonly work_experience: readonly WorkExperienceContent[];
+  readonly projects: readonly ProjectContent[];
+}

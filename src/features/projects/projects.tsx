@@ -1,4 +1,4 @@
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import FrostedCard from '../../components/frosted-card';
 import OffsetSplit from '../../components/offset-split';
 import SkillTag from '../../components/skill-tag';
@@ -12,12 +12,16 @@ export default function Projects() {
       <h2>Projects</h2>
       <FrostedCard>
         {Content.projects.map((project, i) => (
+          /* eslint-disable-next-line @eslint-react/no-array-index-key --
+           * Array is an immutable array, item index will not change
+           */
           <div key={i}>
             {i !== 0 && <hr />}
             <OffsetSplit>
               <div>
                 <p className="project-date">
-                  <span>{project.start_date}</span> — <span>{project.end_date}</span>
+                  <span>{project.start_date}</span> —{' '}
+                  <span>{project.end_date}</span>
                 </p>
               </div>
               <div>
@@ -31,17 +35,27 @@ export default function Projects() {
                   {project.demo_link && (
                     <span className="project-link">
                       <Link to={project.demo_link} target="_blank">
-                        {project.demo_label ? <>{project.demo_label}</> : <>Demo</>}
+                        {project.demo_label ? (
+                          <>{project.demo_label}</>
+                        ) : (
+                          <>Demo</>
+                        )}
                       </Link>
                     </span>
                   )}
                 </p>
                 <ul>
                   {project.points.map((point, j) => (
+                    /* eslint-disable-next-line @eslint-react/no-array-index-key --
+                     * Array is an immutable array, item index will not change
+                     */
                     <li key={j}>{point}</li>
                   ))}
                 </ul>
                 {project.skills.map((skill, j) => (
+                  /* eslint-disable-next-line @eslint-react/no-array-index-key --
+                   * Array is an immutable array, item index will not change
+                   */
                   <SkillTag key={j} {...skill} />
                 ))}
               </div>
