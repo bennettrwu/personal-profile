@@ -37,6 +37,7 @@ const skills: SkillGroup[] = [
     skills: [
       SkillList.GIT,
       SkillList.DOCKER,
+      SkillList.APACHE_SPARK,
       SkillList.GCP,
       SkillList.AWS,
       SkillList.VSCODE,

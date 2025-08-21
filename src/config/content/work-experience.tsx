@@ -2,6 +2,27 @@ import {WorkExperienceContent} from '../../types/configurable-content';
 import SkillList from './skill-tag-config';
 
 const workExperience: WorkExperienceContent[] = [
+  // Amazon
+  {
+    start_date: 'June 2025',
+    end_date: 'Aug 2025',
+    location: 'Seattle, WA',
+    company: 'Amazon',
+    job_title: 'Software Development Engineer Intern',
+    points: [
+      'Designed and implemented a scalable data analysis pipeline to detect patterns in logistics data, processing over 30 billion GPS data points by leveraging AWS EMR, AWS Glue, and Apache Spark',
+      'Deployed AWS infrastructure (EMR, Glue, Step Functions, S3, RDS, Lambda) using AWS CDK to eliminate manual configuration and ensure repeatable deployments',
+      'Developed a full-stack web application with an interactive map view and on-demand filtering, enabling investigators to quickly visualize and investigate results and address a critical data observability gap',
+    ],
+    skills: [
+      SkillList.APACHE_SPARK,
+      SkillList.AWS,
+      SkillList.JAVA,
+      SkillList.REACT,
+      SkillList.TYPESCRIPT,
+      SkillList.POSTGRESQL,
+    ],
+  },
   // Expedia Group
   {
     start_date: 'May 2024',
@@ -13,7 +34,7 @@ const workExperience: WorkExperienceContent[] = [
       'Eliminated 184 duplicate licenses by migrating Salesforce integration to merged instance',
       'Advanced new feature development by developing Kafka consumer to process ad campaign events in a Kotlin SpringBoot application',
       'Owned projects throughout CI/CD pipeline and ultimately deployed to production',
-      'Developed communication skills while working with others to understand and validate project requirements',
+      'Collaborated with cross-functional teams to validate project requirements, ensuring on-time and accurate delivery of key features',
     ],
     skills: [
       SkillList.KAFKA,
