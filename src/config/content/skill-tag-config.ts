@@ -99,6 +99,10 @@ const DOCKER: SkillTagConfig = {
   iconClass: 'devicon-docker-plain',
   skillName: 'Docker',
 };
+const APACHE_SPARK: SkillTagConfig = {
+  iconClass: 'devicon-apachespark-original',
+  skillName: 'Apache Spark',
+};
 const GCP: SkillTagConfig = {
   iconClass: 'devicon-googlecloud-plain',
   skillName: 'Google Could Platform',
@@ -152,6 +156,7 @@ const skillList = {
   MATPLOTLIB,
   GIT,
   DOCKER,
+  APACHE_SPARK,
   GCP,
   AWS,
   VSCODE,
