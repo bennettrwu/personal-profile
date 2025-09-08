@@ -28,7 +28,7 @@
     "react": "19.1.1",
     "react-dom": "19.1.1",
     "react-router-dom": "7.8.2",
-    "typescript-eslint": "8.42.0",
+    "typescript-eslint": "8.43.0",
     "use-debounce": "10.0.6"
   },
   "devDependencies": {
