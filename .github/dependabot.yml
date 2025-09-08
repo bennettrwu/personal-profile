@@ -8,7 +8,7 @@ updates:
     schedule:
       interval: 'weekly'
       day: 'saturday'
-      time: 16:00
+      time: '16:00'
     # Group pull requests together
     groups:
       production-dependencies:
