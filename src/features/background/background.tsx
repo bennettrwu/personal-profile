@@ -77,10 +77,14 @@ export default function Background({ children }: React.PropsWithChildren) {
       )}
 
       <div id="background-particle-config-container">
-        <p>Motion:</p>
-        <ToggleSwitch isOn={motionEnabled} onSwitch={setMotionEnabled} />
         <p>Particles:</p>
         <ToggleSwitch isOn={particlesEnabled} onSwitch={setParticlesEnabled} />
+        {particlesEnabled && (
+          <>
+            <p>Motion:</p>
+            <ToggleSwitch isOn={motionEnabled} onSwitch={setMotionEnabled} />
+          </>
+        )}
       </div>
 
       <div id="background-content-container">{children}</div>
