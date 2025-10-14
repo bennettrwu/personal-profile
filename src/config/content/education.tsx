@@ -1,4 +1,5 @@
 import { Fragment } from 'react/jsx-runtime';
+
 import { EducationContent } from '../../types/configurable-content';
 
 const education: EducationContent[] = [

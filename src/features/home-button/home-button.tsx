@@ -1,5 +1,6 @@
-import { ArrowLeftIcon } from '@heroicons/react/16/solid';
 import { Link } from 'react-router-dom';
+
+import { ArrowLeftIcon } from '@heroicons/react/16/solid';
 
 import './home-button.scss';
 

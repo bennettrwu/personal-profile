@@ -1,14 +1,13 @@
 import { useEffect, useState } from 'react';
-import { useDebouncedCallback } from 'use-debounce';
 
 import { Engine, IOptions, RecursivePartial } from '@tsparticles/engine';
 import Particles, { initParticlesEngine } from '@tsparticles/react';
 import { loadSlim } from '@tsparticles/slim';
+import { useDebouncedCallback } from 'use-debounce';
 
-import genParticleConfig from './getParticleConfig';
 import ToggleSwitch from '../../components/toggle-switch';
-
 import './background.scss';
+import genParticleConfig from './getParticleConfig';
 
 export default function Background({ children }: React.PropsWithChildren) {
   const [particleConfig, setParticleConfig] =

@@ -1,7 +1,6 @@
 import FrostedCard from '../../components/frosted-card';
 import OffsetSplit from '../../components/offset-split';
 import Content from '../../config/content/content';
-
 import './education.scss';
 
 export default function Education() {

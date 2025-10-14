@@ -1,4 +1,5 @@
 import { Fragment } from 'react/jsx-runtime';
+
 import { ProjectContent } from '../../types/configurable-content';
 import SkillList from './skill-tag-config';
 

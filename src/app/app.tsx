@@ -1,9 +1,9 @@
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 
 import Background from '../features/background/background';
-import Profile from './routes/profile';
-import Privacy from './routes/privacy';
 import NotFound from './routes/notfound';
+import Privacy from './routes/privacy';
+import Profile from './routes/profile';
 
 const router = createBrowserRouter([
   {

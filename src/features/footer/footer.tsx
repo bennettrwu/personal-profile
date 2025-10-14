@@ -1,6 +1,5 @@
 import FrostedCard from '../../components/frosted-card';
 import ScrollLink from '../../components/scroll-link';
-
 import './footer.scss';
 
 export default function Footer() {

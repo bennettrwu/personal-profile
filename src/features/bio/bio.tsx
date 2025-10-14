@@ -1,10 +1,10 @@
 import { Link } from 'react-router-dom';
-import FrostedCard from '../../components/frosted-card';
-import Content from '../../config/content/content';
-import HalfSplit from '../../components/half-split';
 
 import { ArrowTopRightOnSquareIcon } from '@heroicons/react/16/solid';
 
+import FrostedCard from '../../components/frosted-card';
+import HalfSplit from '../../components/half-split';
+import Content from '../../config/content/content';
 import './bio.scss';
 
 export default function Bio() {
