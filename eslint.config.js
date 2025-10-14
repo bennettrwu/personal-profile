@@ -1,11 +1,11 @@
-import { globalIgnores } from 'eslint/config';
+import eslintReact from '@eslint-react/eslint-plugin';
 import js from '@eslint/js';
+import eslintConfigPrettierFlat from 'eslint-config-prettier/flat';
 import reactHooks from 'eslint-plugin-react-hooks';
 import reactRefresh from 'eslint-plugin-react-refresh';
-import tseslint from 'typescript-eslint';
-import eslintConfigPrettierFlat from 'eslint-config-prettier/flat';
-import eslintReact from '@eslint-react/eslint-plugin';
+import { defineConfig, globalIgnores } from 'eslint/config';
 import globals from 'globals';
+import tseslint from 'typescript-eslint';
 
 /**
  * @see https://typescript-eslint.io/getting-started/#step-2-configuration
@@ -18,12 +18,12 @@ import globals from 'globals';
  * - Catch potential errors
  * - Mantain code quality
  */
-export default tseslint.config([
-  // Ignore files in /dist folder (build output folder)
-  globalIgnores(['dist']),
+export default defineConfig([
+  // Files to ignore when linting
+  globalIgnores(['**/dist', '**/coverage']),
   {
     // Only lint Typescript files
-    files: ['**/*.{ts,tsx}'],
+    files: ['**/*.{ts,mts,cts,tsx}'],
     extends: [
       /**
        * @see https://eslint.org/docs/latest/use/configure/configuration-files#using-predefined-configurations
@@ -48,7 +48,7 @@ export default tseslint.config([
        * @see https://react.dev/learn/react-compiler/installation#eslint-integration
        * Allows ESLint to enforce the "Rules of Hooks"
        */
-      reactHooks.configs['recommended-latest'],
+      reactHooks.configs.flat['recommended-latest'],
 
       /**
        * @see https://github.com/ArnaudBarre/eslint-plugin-react-refresh
@@ -75,14 +75,15 @@ export default tseslint.config([
        */
       parserOptions: {
         projectService: true,
-        tsconfigRootDir: import.meta.dirname,
       },
       // Match tsconfig.json version target
-      ecmaVersion: 2020,
+      ecmaVersion: 2024,
       // Configures global variables ESLint should be aware of
       globals: {
         // Include global variables provided by browsers
         ...globals.browser,
+        // Include global variables provided by node
+        ...globals.node,
       },
     },
     rules: {
