@@ -17,7 +17,11 @@ const skills: SkillGroup[] = [
     ],
   },
   {
-    title: 'Frameworks',
+    title: 'Databases:',
+    skills: [SkillList.MYSQL, SkillList.POSTGRESQL, SkillList.MONGODB],
+  },
+  {
+    title: 'Frameworks / Libraries',
     skills: [
       SkillList.REACT,
       SkillList.NODE,
@@ -26,11 +30,6 @@ const skills: SkillGroup[] = [
       SkillList.JEST,
       SkillList.SPRINGBOOT,
       SkillList.OPENCL,
-    ],
-  },
-  {
-    title: 'Libraries',
-    skills: [
       SkillList.OPENCV,
       SkillList.NUMPY,
       SkillList.PYTORCH,
@@ -39,7 +38,7 @@ const skills: SkillGroup[] = [
     ],
   },
   {
-    title: 'Technologies',
+    title: 'Tools / Technologies',
     skills: [
       SkillList.GIT,
       SkillList.DOCKER,
@@ -51,6 +50,7 @@ const skills: SkillGroup[] = [
       SkillList.GITHUB_ACTIONS,
       SkillList.KAFKA,
       SkillList.LINUX,
+      SkillList.CUDA,
     ],
   },
 ];
