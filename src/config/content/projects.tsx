@@ -4,6 +4,27 @@ import SkillList from './skill-tag-config';
 
 const projects: ProjectContent[] = [
   {
+    start_date: 'Aug 2024',
+    end_date: 'Current',
+    title: 'ScribeAR',
+    demo_link: 'https://scribear.illinois.edu',
+    demo_label: 'Live Demo',
+    source_link: 'https://github.com/scribear',
+    points: [
+      'Co-developed ScribeAR, a live captioning system for classrooms that improves accessibility in courses and office hours',
+      'Architected and implemented session management backend that enables users to instantly access the transcription sessions on their own devices, such as phones or AR glasses, via a QR code',
+      'Engineered backend transcription service that provides accurate and low latency (< 2 second) automated speech recognition for multiple concurrent audio streams using OpenAI Whispe',
+    ],
+    skills: [
+      SkillList.DOCKER,
+      SkillList.REACT,
+      SkillList.NODE,
+      SkillList.TYPESCRIPT,
+      SkillList.PYTHON,
+      SkillList.CUDA,
+    ],
+  },
+  {
     start_date: 'Jan 2024',
     end_date: 'May 2024',
     title: 'Grocery Aid',

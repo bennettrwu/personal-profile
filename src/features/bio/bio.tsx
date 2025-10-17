@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import FrostedCard from '../../components/frosted-card';
 import Content from '../../config/content/content';
@@ -8,6 +9,28 @@ import { ArrowTopRightOnSquareIcon } from '@heroicons/react/16/solid';
 import './bio.scss';
 
 export default function Bio() {
+  const [time, setTime] = useState('');
+  useEffect(() => {
+    let updateTimeout: number;
+
+    const updateTime = () => {
+      const date = new Date();
+      const options: Intl.DateTimeFormatOptions = {
+        dateStyle: 'full',
+        timeStyle: 'full',
+        timeZone: Content.profile.timezone,
+      };
+      setTime(new Intl.DateTimeFormat('en-US', options).format(date));
+
+      updateTimeout = setTimeout(updateTime, 500);
+    };
+    updateTime();
+
+    return () => {
+      clearTimeout(updateTimeout);
+    };
+  }, []);
+
   return (
     <>
       <h1>{Content.profile.name}</h1>
@@ -15,7 +38,7 @@ export default function Bio() {
         <FrostedCard>
           <h2>{Content.profile.position}</h2>
           <p>{Content.profile.tagline}</p>
-          <p>{Content.profile.timezone}</p>
+          <p>{time}</p>
 
           <div id="bio-icon-links-container">
             {Content.profile.links.map((link, i) => (

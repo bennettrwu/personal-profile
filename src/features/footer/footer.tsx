@@ -8,7 +8,7 @@ export default function Footer() {
     <footer id="footer">
       <FrostedCard>
         <p id="footer-text">
-          <span>Copyright © 2024</span> | <span>Bennett Ruichu Wu</span> |{' '}
+          <span>Copyright © 2025</span> | <span>Bennett Ruichu Wu</span> |{' '}
           <span>
             <ScrollLink id="privacy-poliy-link" to={'/privacy'}>
               Privacy Policy
