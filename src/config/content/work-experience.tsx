@@ -10,7 +10,7 @@ const workExperience: WorkExperienceContent[] = [
     company: 'Amazon',
     job_title: 'Software Development Engineer Intern',
     points: [
-      'Designed and implemented a scalable data analysis pipeline to detect patterns in logistics data, processing over 30 billion GPS data points by leveraging AWS EMR, AWS Glue, and Apache Spark',
+      'Architected and implemented a scalable data analysis pipeline to detect patterns in logistics data, processing over 30 billion GPS data points by leveraging AWS EMR, AWS Glue, and Apache Spark',
       'Deployed AWS infrastructure (EMR, Glue, Step Functions, S3, RDS, Lambda) using AWS CDK to eliminate manual configuration and ensure repeatable deployments',
       'Developed a full-stack web application with an interactive map view and on-demand filtering, enabling investigators to quickly visualize and investigate results and address a critical data observability gap',
     ],
@@ -31,9 +31,8 @@ const workExperience: WorkExperienceContent[] = [
     company: 'Expedia Group',
     job_title: 'Software Development Engineer Intern',
     points: [
-      'Eliminated 184 duplicate licenses by migrating Salesforce integration to merged instance',
-      'Advanced new feature development by developing Kafka consumer to process ad campaign events in a Kotlin SpringBoot application',
-      'Owned projects throughout CI/CD pipeline and ultimately deployed to production',
+      'Eliminated the need for 184 duplicate licenses by unifying fragmented Salesforce integration',
+      'Integrated a Kafka consumer to process ad campaign events in a Kotlin SpringBoot application',
       'Collaborated with cross-functional teams to validate project requirements, ensuring on-time and accurate delivery of key features',
     ],
     skills: [
@@ -66,8 +65,8 @@ const workExperience: WorkExperienceContent[] = [
     company: 'AbbVie',
     job_title: 'Summer Worker',
     points: [
-      'Slashed time from one week to a few minutes for nuclear magnetic resonance spectra analysis through automation with Python scripts',
-      'Ensured seamless machine learning data collection by building web application on AWS for scientists to quickly view and correct machine predictions while generating result report',
+      'Slashed analysis time from one week to a few minutes for nuclear magnetic resonance spectra analysis through automation by Python scripts',
+      'Ensured seamless machine learning data collection by building a web application on AWS for scientists to quickly view and validate machine predictions to provide human-in-the-loop feedback',
     ],
     skills: [
       SkillList.AWS,

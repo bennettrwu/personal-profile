@@ -8,7 +8,7 @@ const profile: ProfileContent = {
       <span>Making life better,</span> <span>one line of code at a time</span>
     </>
   ),
-  timezone: 'Chicago Standard Time (CST)',
+  timezone: 'America/Chicago',
   links: [
     // Github
     {

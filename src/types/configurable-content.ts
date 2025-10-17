@@ -11,7 +11,7 @@ export interface ProfileContent {
   readonly name: ConfigurableContentElement;
   readonly position: ConfigurableContentElement;
   readonly tagline: ConfigurableContentElement;
-  readonly timezone: ConfigurableContentElement;
+  readonly timezone: string;
   readonly links: readonly ProfileLinkContent[];
   readonly resume_link: string;
   readonly bio: ConfigurableContentElement;
@@ -27,7 +27,7 @@ export interface EducationContent {
 }
 
 export interface SkillTagConfig {
-  readonly iconClass: string;
+  readonly iconClass?: string;
   readonly skillName: string;
 }
 

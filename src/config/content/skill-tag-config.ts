@@ -131,6 +131,9 @@ const LINUX: SkillTagConfig = {
   iconClass: 'devicon-linux-plain',
   skillName: 'GNU/Linux',
 };
+const CUDA: SkillTagConfig = {
+  skillName: 'CUDA',
+};
 
 const skillList = {
   C_CPP,
@@ -164,6 +167,7 @@ const skillList = {
   GITHUB_ACTIONS,
   KAFKA,
   LINUX,
+  CUDA,
 };
 
 export default skillList;
