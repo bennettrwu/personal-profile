@@ -13,7 +13,7 @@ const projects: ProjectContent[] = [
     points: [
       'Co-developed ScribeAR, a live captioning system for classrooms that improves accessibility in courses and office hours',
       'Architected and implemented session management backend that enables users to instantly access the transcription sessions on their own devices, such as phones or AR glasses, via a QR code',
-      'Engineered backend transcription service that provides accurate and low latency (< 2 second) automated speech recognition for multiple concurrent audio streams using OpenAI Whispe',
+      'Engineered backend transcription service that provides accurate and low latency (< 2 second) automated speech recognition for multiple concurrent audio streams using OpenAI Whisper',
     ],
     skills: [
       SkillList.DOCKER,
