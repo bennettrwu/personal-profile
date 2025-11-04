@@ -60,7 +60,7 @@ const workExperience: WorkExperienceContent[] = [
   // AbbVie
   {
     start_date: 'May 2023',
-    end_date: 'Apr 2023',
+    end_date: 'Aug 2023',
     location: 'North Chicago, IL',
     company: 'AbbVie',
     job_title: 'Summer Worker',
