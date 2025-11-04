@@ -11,9 +11,6 @@ const skills: SkillGroup[] = [
       SkillList.TYPESCRIPT,
       SkillList.JAVA,
       SkillList.KOTLIN,
-      SkillList.MYSQL,
-      SkillList.POSTGRESQL,
-      SkillList.MONGODB,
     ],
   },
   {
