@@ -27,6 +27,7 @@ export default function Education() {
               <div>
                 <h3 className="education-school">{education.school}</h3>
                 <p className="education-degree">{education.degree}</p>
+                <p className="education-minor">{education.minor}</p>
                 <ul>
                   {education.points.map((point, j) => (
                     /* eslint-disable-next-line @eslint-react/no-array-index-key --
