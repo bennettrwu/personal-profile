@@ -105,7 +105,7 @@ const APACHE_SPARK: SkillTagConfig = {
 };
 const GCP: SkillTagConfig = {
   iconClass: 'devicon-googlecloud-plain',
-  skillName: 'Google Could Platform',
+  skillName: 'Google Cloud Platform',
 };
 const AWS: SkillTagConfig = {
   iconClass: 'devicon-amazonwebservices-plain',
