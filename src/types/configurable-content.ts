@@ -23,6 +23,7 @@ export interface EducationContent {
   readonly gpa: ConfigurableContentElement;
   readonly school: ConfigurableContentElement;
   readonly degree: ConfigurableContentElement;
+  readonly minor: ConfigurableContentElement;
   readonly points: readonly ConfigurableContentElement[];
 }
 
