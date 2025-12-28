@@ -17,7 +17,7 @@
   "license": "MIT",
   "description": "A simple personal profile site to host my resume info.",
   "engines": {
-    "node": "^22.0.0"
+    "node": "^24.0.0"
   },
   "dependencies": {
     "@heroicons/react": "2.2.0",
