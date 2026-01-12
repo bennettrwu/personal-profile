@@ -11,7 +11,5 @@ updates:
       time: '16:00'
     # Group pull requests together
     groups:
-      production-dependencies:
-        dependency-type: 'production'
-      development-dependencies:
-        dependency-type: 'development'
+      dependencies:
+        patterns: '*'
