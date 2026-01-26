@@ -27,8 +27,8 @@
     "normalize.css": "8.0.1",
     "react": "19.2.3",
     "react-dom": "19.2.3",
-    "react-router-dom": "7.12.0",
-    "typescript-eslint": "8.53.0",
+    "react-router-dom": "7.13.0",
+    "typescript-eslint": "8.53.1",
     "use-debounce": "10.1.0"
   },
   "devDependencies": {
