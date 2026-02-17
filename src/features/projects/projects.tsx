@@ -1,9 +1,9 @@
 import { Link } from 'react-router-dom';
+
 import FrostedCard from '../../components/frosted-card';
 import OffsetSplit from '../../components/offset-split';
 import SkillTag from '../../components/skill-tag';
 import Content from '../../config/content/content';
-
 import './project.scss';
 
 export default function Projects() {
