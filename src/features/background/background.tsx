@@ -1,40 +1,39 @@
 import { useEffect, useState } from 'react';
-import { useDebouncedCallback } from 'use-debounce';
 
 import { Engine, IOptions, RecursivePartial } from '@tsparticles/engine';
 import Particles, { initParticlesEngine } from '@tsparticles/react';
 import { loadSlim } from '@tsparticles/slim';
+import { useDebouncedCallback } from 'use-debounce';
 
-import genParticleConfig from './getParticleConfig';
 import ToggleSwitch from '../../components/toggle-switch';
-
 import './background.scss';
+import genParticleConfig from './get-particle-config';
 
 export default function Background({ children }: React.PropsWithChildren) {
   const [particleConfig, setParticleConfig] =
     useState<RecursivePartial<IOptions | undefined>>();
 
   // default to true if undefined
-  const [motionEnabled, privateSetMotionEnabled] = useState(
+  const [motionEnabled, setMotionEnabled] = useState(
     window.localStorage.getItem('motionEnabled') !== 'false',
   );
-  const [particlesEnabled, privateSetParticlesEnabled] = useState(
+  const [particlesEnabled, setParticlesEnabled] = useState(
     window.localStorage.getItem('particlesEnabled') !== 'false',
   );
 
   // Override state update functions to also save to local storage
-  const setMotionEnabled = (enabled: boolean) => {
+  const setMotionEnabledWithSave = (enabled: boolean) => {
     window.localStorage.setItem('motionEnabled', enabled.toString());
-
     // Particle config needs to be updated when disabling motion
     setParticleConfig(
       genParticleConfig(window.innerWidth, window.innerHeight, enabled),
     );
-    privateSetMotionEnabled(enabled);
+    setMotionEnabled(enabled);
   };
-  const setParticlesEnabled = (enabled: boolean) => {
+
+  const setParticlesEnabledWithSave = (enabled: boolean) => {
     window.localStorage.setItem('particlesEnabled', enabled.toString());
-    privateSetParticlesEnabled(enabled);
+    setParticlesEnabled(enabled);
   };
 
   // Debounce particle configuration updates
@@ -78,11 +77,17 @@ export default function Background({ children }: React.PropsWithChildren) {
 
       <div id="background-particle-config-container">
         <p>Particles:</p>
-        <ToggleSwitch isOn={particlesEnabled} onSwitch={setParticlesEnabled} />
+        <ToggleSwitch
+          isOn={particlesEnabled}
+          onSwitch={setParticlesEnabledWithSave}
+        />
         {particlesEnabled && (
           <>
             <p>Motion:</p>
-            <ToggleSwitch isOn={motionEnabled} onSwitch={setMotionEnabled} />
+            <ToggleSwitch
+              isOn={motionEnabled}
+              onSwitch={setMotionEnabledWithSave}
+            />
           </>
         )}
       </div>

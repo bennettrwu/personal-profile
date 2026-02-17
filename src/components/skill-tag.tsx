@@ -1,5 +1,4 @@
 import { SkillTagConfig } from '../types/configurable-content';
-
 import './skill-tag.scss';
 
 function SkillTag({ iconClass, skillName }: SkillTagConfig) {

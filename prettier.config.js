@@ -17,6 +17,19 @@ const config = {
   semi: true,
   singleQuote: true,
   jsxSingleQuote: false,
+
+  // Enforce import grouping and ordering
+  importOrder: [
+    '^react$',
+    '^@mui/(.*)',
+    '<THIRD_PARTY_MODULES>',
+    '^@scribear/(.*)',
+    '^#src/(.*)',
+    '^[./]',
+  ],
+  importOrderSeparation: true,
+  importOrderSortSpecifiers: true,
+  plugins: ['@trivago/prettier-plugin-sort-imports'],
 };
 
 export default config;

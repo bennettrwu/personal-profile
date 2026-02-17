@@ -1,33 +1,33 @@
 import { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
-import FrostedCard from '../../components/frosted-card';
-import Content from '../../config/content/content';
-import HalfSplit from '../../components/half-split';
 
 import { ArrowTopRightOnSquareIcon } from '@heroicons/react/16/solid';
+import { Link } from 'react-router-dom';
 
+import FrostedCard from '../../components/frosted-card';
+import HalfSplit from '../../components/half-split';
+import Content from '../../config/content/content';
 import './bio.scss';
 
 export default function Bio() {
   const [time, setTime] = useState('');
-  useEffect(() => {
-    let updateTimeout: number;
 
-    const updateTime = () => {
-      const date = new Date();
-      const options: Intl.DateTimeFormatOptions = {
-        dateStyle: 'full',
-        timeStyle: 'full',
-        timeZone: Content.profile.timezone,
-      };
-      setTime(new Intl.DateTimeFormat('en-US', options).format(date));
-
-      updateTimeout = setTimeout(updateTime, 500);
+  const updateTime = () => {
+    const date = new Date();
+    const options: Intl.DateTimeFormatOptions = {
+      dateStyle: 'full',
+      timeStyle: 'full',
+      timeZone: Content.profile.timezone,
     };
-    updateTime();
+    setTime(new Intl.DateTimeFormat('en-US', options).format(date));
+  };
+
+  useEffect(() => {
+    const initialTimeout = setTimeout(updateTime, 0);
+    const updateInterval = setInterval(updateTime, 500);
 
     return () => {
-      clearTimeout(updateTimeout);
+      clearTimeout(initialTimeout);
+      clearInterval(updateInterval);
     };
   }, []);
 

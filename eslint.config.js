@@ -1,11 +1,12 @@
-import { globalIgnores } from 'eslint/config';
+import eslintReact from '@eslint-react/eslint-plugin';
 import js from '@eslint/js';
+import eslintConfigPrettierFlat from 'eslint-config-prettier/flat';
+import checkFile from 'eslint-plugin-check-file';
 import reactHooks from 'eslint-plugin-react-hooks';
 import reactRefresh from 'eslint-plugin-react-refresh';
-import tseslint from 'typescript-eslint';
-import eslintConfigPrettierFlat from 'eslint-config-prettier/flat';
-import eslintReact from '@eslint-react/eslint-plugin';
+import { defineConfig } from 'eslint/config';
 import globals from 'globals';
+import tseslint from 'typescript-eslint';
 
 /**
  * @see https://typescript-eslint.io/getting-started/#step-2-configuration
@@ -18,12 +19,13 @@ import globals from 'globals';
  * - Catch potential errors
  * - Mantain code quality
  */
-export default tseslint.config([
-  // Ignore files in /dist folder (build output folder)
-  globalIgnores(['dist']),
+export default defineConfig([
   {
     // Only lint Typescript files
-    files: ['**/*.{ts,tsx}'],
+    files: ['**/*.{ts,mts,cts,tsx}'],
+    plugins: {
+      'check-file': checkFile,
+    },
     extends: [
       /**
        * @see https://eslint.org/docs/latest/use/configure/configuration-files#using-predefined-configurations
@@ -48,7 +50,7 @@ export default tseslint.config([
        * @see https://react.dev/learn/react-compiler/installation#eslint-integration
        * Allows ESLint to enforce the "Rules of Hooks"
        */
-      reactHooks.configs['recommended-latest'],
+      reactHooks.configs.flat.recommended,
 
       /**
        * @see https://github.com/ArnaudBarre/eslint-plugin-react-refresh
@@ -75,17 +77,73 @@ export default tseslint.config([
        */
       parserOptions: {
         projectService: true,
-        tsconfigRootDir: import.meta.dirname,
       },
       // Match tsconfig.json version target
-      ecmaVersion: 2020,
+      ecmaVersion: 2024,
       // Configures global variables ESLint should be aware of
       globals: {
         // Include global variables provided by browsers
         ...globals.browser,
+        // Include global variables provided by node
+        ...globals.node,
       },
     },
     rules: {
+      /**
+       * @see https://eslint.org/docs/latest/rules/no-restricted-imports
+       * @see https://mui.com/material-ui/guides/minimizing-bundle-size/#enforce-best-practices-with-eslint
+       * Restrict use of MUI barrel imports for better dev startup/rebuild performance
+       */
+      'no-restricted-imports': [
+        'error',
+        {
+          patterns: [{ regex: '^@mui/[^/]+$' }],
+        },
+      ],
+      'no-restricted-imports': [
+        'warn',
+        {
+          patterns: [
+            {
+              group: ['../../../*'],
+              message:
+                'Avoid deeply nested relative imports. Consider refactoring or using a subpath import instead.',
+            },
+          ],
+        },
+      ],
+      /**
+       * @see https://redux.js.org/usage/usage-with-typescript#use-typed-hooks-in-components
+       * Restrict use of useSelector and useDispatch in favor of useAppDispatch and useAppSelector
+       */
+      '@typescript-eslint/no-restricted-imports': [
+        'error',
+        {
+          name: 'react-redux',
+          importNames: ['useSelector', 'useDispatch'],
+          message:
+            'Use typed hooks `useAppDispatch` and `useAppSelector` instead.',
+        },
+      ],
+      /**
+       * @see https://github.com/dukeluo/eslint-plugin-check-file
+       * A collection of rules for consistent folder and file naming
+       */
+      'check-file/filename-naming-convention': [
+        'error',
+        {
+          '**/*.{ts,mts,cts,tsx}': 'KEBAB_CASE',
+        },
+        {
+          ignoreMiddleExtensions: true,
+        },
+      ],
+      'check-file/folder-naming-convention': [
+        'error',
+        {
+          '{src,tests}/**': 'KEBAB_CASE',
+        },
+      ],
       /**
        * @see https://typescript-eslint.io/rules/naming-convention/
        * A collection of rules for consistent identifier naming
@@ -100,8 +158,10 @@ export default tseslint.config([
             'classMethod',
             'variable',
           ],
-          // Prefer camelCase but allow UPPER_CASE for global variables
-          format: ['camelCase', 'UPPER_CASE'],
+          // Prefer camelCase but allow PascalCase or UPPER_CASE for global variables
+          format: ['camelCase', 'PascalCase', 'UPPER_CASE'],
+          // Allow underscore for unused variables
+          leadingUnderscore: 'allow',
         },
         {
           selector: ['function'],
@@ -165,6 +225,19 @@ export default tseslint.config([
           trailingUnderscore: 'forbid',
         },
       ],
+    },
+  },
+  {
+    // Disable strict type checking rules for test files
+    // There's no real point in making sure JSON outputs are a certain type
+    // When the test file is about to check it.
+    files: ['**/*.test.ts'],
+    rules: {
+      '@typescript-eslint/no-unsafe-assignment': 'off',
+      '@typescript-eslint/no-unsafe-member-access': 'off',
+      '@typescript-eslint/no-unsafe-return': 'off',
+      '@typescript-eslint/no-non-null-assertion': 'off',
+      '@typescript-eslint/unbound-method': 'off',
     },
   },
 ]);

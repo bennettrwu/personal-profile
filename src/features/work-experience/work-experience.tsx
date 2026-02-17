@@ -2,7 +2,6 @@ import FrostedCard from '../../components/frosted-card';
 import OffsetSplit from '../../components/offset-split';
 import SkillTag from '../../components/skill-tag';
 import Content from '../../config/content/content';
-
 import './work-experience.scss';
 
 export default function WorkExperience() {
