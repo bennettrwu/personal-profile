@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { memo, useEffect, useState } from 'react';
 
 import { Engine, IOptions, RecursivePartial } from '@tsparticles/engine';
 import Particles, { initParticlesEngine } from '@tsparticles/react';
@@ -8,6 +8,8 @@ import { useDebouncedCallback } from 'use-debounce';
 import ToggleSwitch from '../../components/toggle-switch';
 import './background.scss';
 import genParticleConfig from './get-particle-config';
+
+const MemoizedParticles = memo(Particles);
 
 export default function Background({ children }: React.PropsWithChildren) {
   const [particleConfig, setParticleConfig] =
@@ -20,7 +22,6 @@ export default function Background({ children }: React.PropsWithChildren) {
   const [particlesEnabled, setParticlesEnabled] = useState(
     window.localStorage.getItem('particlesEnabled') !== 'false',
   );
-  const [particlesFadingIn, setParticlesFadingIn] = useState(true);
 
   // Override state update functions to also save to local storage
   const setMotionEnabledWithSave = (enabled: boolean) => {
@@ -35,7 +36,6 @@ export default function Background({ children }: React.PropsWithChildren) {
   const setParticlesEnabledWithSave = (enabled: boolean) => {
     window.localStorage.setItem('particlesEnabled', enabled.toString());
     setParticlesEnabled(enabled);
-    setParticlesFadingIn(enabled);
   };
 
   // Debounce particle configuration updates
@@ -71,18 +71,13 @@ export default function Background({ children }: React.PropsWithChildren) {
     <>
       <div id="background-gradient"></div>
 
-      {particlesEnabled && (
+      {particlesEnabled && particleConfig && (
         <>
-          <Particles id="tsparticles" options={particleConfig} />
-          {particlesFadingIn && (
-            <div
-              id="background-gradient-cover"
-              className="animate-fade-out-3s"
-              onAnimationEnd={() => {
-                setParticlesFadingIn(false);
-              }}
-            ></div>
-          )}
+          <MemoizedParticles id="tsparticles" options={particleConfig} />
+          <div
+            id="background-gradient-cover"
+            className="animate-fade-out-3s"
+          ></div>
         </>
       )}
 
