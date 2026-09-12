@@ -31,9 +31,13 @@ export default function genParticleConfig(
   return {
     background: { opacity: 0 },
     fpsLimit: 30,
+    // HDR is on by default since v4 and renders colors in display-p3 on
+    // wide-gamut screens, which shifts them away from the sRGB theme colors
+    hdr: false,
     interactivity: { resize: { enable: true } },
     particles: {
-      color: { value: colors.accent500 },
+      // v4 moved particle color/fill under `paint`; `particles.color` is ignored
+      paint: { color: { value: colors.accent500 } },
       links: {
         color: colors.accent500,
         distance: 150,

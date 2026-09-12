@@ -25,6 +25,15 @@ body {
   @extend %background-gradient;
 }
 
+// tsparticles v4 appends its canvas here before it applies the fixed
+// positioning, so keep this container out of the page flow to avoid a
+// layout shift (content jumping down and back) while the canvas mounts
+#tsparticles {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+}
+
 // Sits above the particle canvas and fades out to reveal it
 #background-gradient-cover {
   @extend %background-gradient;
