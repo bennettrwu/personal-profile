@@ -1,7 +1,7 @@
 import { memo, useEffect, useState } from 'react';
 
 import { Engine, IOptions, RecursivePartial } from '@tsparticles/engine';
-import Particles, { initParticlesEngine } from '@tsparticles/react';
+import Particles, { ParticlesProvider } from '@tsparticles/react';
 import { loadSlim } from '@tsparticles/slim';
 import { useDebouncedCallback } from 'use-debounce';
 
@@ -10,6 +10,11 @@ import './background.scss';
 import genParticleConfig from './get-particle-config';
 
 const MemoizedParticles = memo(Particles);
+
+// Must be a stable reference for the lifetime of the app
+const initParticlesEngine = async (engine: Engine) => {
+  await loadSlim(engine);
+};
 
 export default function Background({ children }: React.PropsWithChildren) {
   const [particleConfig, setParticleConfig] =
@@ -46,7 +51,7 @@ export default function Background({ children }: React.PropsWithChildren) {
       motionEnabled,
       particleConfig,
     );
-    /* eslint-disable-next-line @eslint-react/hooks-extra/no-direct-set-state-in-use-effect --
+    /* eslint-disable-next-line @eslint-react/set-state-in-effect --
      * Use effect is only called when component first mounts and state needs to be updated based on external events
      */
     if (newConfig) setParticleConfig(newConfig);
@@ -54,12 +59,6 @@ export default function Background({ children }: React.PropsWithChildren) {
   useEffect(() => {
     // Update particle config on each resize
     window.addEventListener('resize', updateParticleConfig);
-
-    initParticlesEngine(async (engine: Engine) => {
-      await loadSlim(engine);
-    }).catch((error: unknown) => {
-      console.error(error);
-    });
     updateParticleConfig();
 
     return () => {
@@ -73,7 +72,9 @@ export default function Background({ children }: React.PropsWithChildren) {
 
       {particlesEnabled && particleConfig && (
         <>
-          <MemoizedParticles id="tsparticles" options={particleConfig} />
+          <ParticlesProvider init={initParticlesEngine}>
+            <MemoizedParticles id="tsparticles" options={particleConfig} />
+          </ParticlesProvider>
           <div
             id="background-gradient-cover"
             className="animate-fade-out-3s"
