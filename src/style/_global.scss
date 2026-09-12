@@ -26,10 +26,23 @@ li {
     opacity: 0;
   }
   to {
-    opacity: 100;
+    opacity: 1;
+  }
+}
+
+@keyframes fade-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
   }
 }
 
 .animate-fade-in-3s {
   animation: fade-in 3s;
+}
+
+.animate-fade-out-3s {
+  animation: fade-out 3s forwards;
 }

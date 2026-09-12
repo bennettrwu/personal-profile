@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { memo, useEffect, useState } from 'react';
 
 import { Engine, IOptions, RecursivePartial } from '@tsparticles/engine';
 import Particles, { initParticlesEngine } from '@tsparticles/react';
@@ -8,6 +8,8 @@ import { useDebouncedCallback } from 'use-debounce';
 import ToggleSwitch from '../../components/toggle-switch';
 import './background.scss';
 import genParticleConfig from './get-particle-config';
+
+const MemoizedParticles = memo(Particles);
 
 export default function Background({ children }: React.PropsWithChildren) {
   const [particleConfig, setParticleConfig] =
@@ -69,10 +71,14 @@ export default function Background({ children }: React.PropsWithChildren) {
     <>
       <div id="background-gradient"></div>
 
-      {particlesEnabled && (
-        <div className="animate-fade-in-3s">
-          <Particles id="tsparticles" options={particleConfig} />
-        </div>
+      {particlesEnabled && particleConfig && (
+        <>
+          <MemoizedParticles id="tsparticles" options={particleConfig} />
+          <div
+            id="background-gradient-cover"
+            className="animate-fade-out-3s"
+          ></div>
+        </>
       )}
 
       <div id="background-particle-config-container">
