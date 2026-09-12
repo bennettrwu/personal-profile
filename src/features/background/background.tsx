@@ -20,6 +20,7 @@ export default function Background({ children }: React.PropsWithChildren) {
   const [particlesEnabled, setParticlesEnabled] = useState(
     window.localStorage.getItem('particlesEnabled') !== 'false',
   );
+  const [particlesFadingIn, setParticlesFadingIn] = useState(true);
 
   // Override state update functions to also save to local storage
   const setMotionEnabledWithSave = (enabled: boolean) => {
@@ -34,6 +35,7 @@ export default function Background({ children }: React.PropsWithChildren) {
   const setParticlesEnabledWithSave = (enabled: boolean) => {
     window.localStorage.setItem('particlesEnabled', enabled.toString());
     setParticlesEnabled(enabled);
+    setParticlesFadingIn(enabled);
   };
 
   // Debounce particle configuration updates
@@ -70,9 +72,18 @@ export default function Background({ children }: React.PropsWithChildren) {
       <div id="background-gradient"></div>
 
       {particlesEnabled && (
-        <div className="animate-fade-in-3s">
+        <>
           <Particles id="tsparticles" options={particleConfig} />
-        </div>
+          {particlesFadingIn && (
+            <div
+              id="background-gradient-cover"
+              className="animate-fade-out-3s"
+              onAnimationEnd={() => {
+                setParticlesFadingIn(false);
+              }}
+            ></div>
+          )}
+        </>
       )}
 
       <div id="background-particle-config-container">
